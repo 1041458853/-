@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{SITE_NAME}</title>
+<link href="http://explorer.mutaoinc.net/static/images/common/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="/statics/imtcms/css/bootstrap.min.css">
+<link rel="stylesheet" href="/statics/imtcms/css/font-awesome.min.css">
+<link rel="stylesheet" href="/statics/imtcms/fonts/iconfont.css">
+<link rel="stylesheet" href="/statics/imtcms/css/animate.css">
+<link rel="stylesheet" href="/statics/imtcms/css/common.css">
+<link href="/statics/imtcms/css/login.css" rel="stylesheet">
+<script src="/statics/imtcms/libs/jquery/jquery-1.11.1.min.js"></script>
+<script src="/statics/imtcms/libs/bootstrap/bootstrap.min.js"></script>
+<!--兼容老版本-->
+<script type="text/javascript">var dr_index = 1;var siteurl = "{SITE_PATH}{SELF}";var memberpath = "{MEMBER_PATH}";var sys_theme = "{THEME_PATH}admin/";</script>
+<link rel="stylesheet" href="/statics/js/ui-dialog.css">
+<script type="text/javascript" src="/statics/js/dialog-plus.js"></script>
+<script type="text/javascript" src="/statics/js/jquery.artDialog.js?skin=default"></script>
+<script type="text/javascript" src="/statics/js/validate.js"></script>
+<script type="text/javascript" src="/statics/js/admin.js"></script>
+<script type="text/javascript" src="/statics/js/dayrui.js"></script>
+<!--/兼容老版本-->
+<link rel="stylesheet" href="/statics/imtcms/css/style.css">
+<script src="/statics/imtcms/js/require.js"></script>
+<script src="/statics/imtcms/js/config.js"></script>
+</head>
+
+<body>
+	<img class="background" src="/statics/imtcms/images/2.jpg" />
+	<style type="text/css">.title{background: #6699cc url(/statics/imtcms/images/2.jpg) 0px -92px;}</style>
+	<div class="loginbox animated-500 fadeInDown" >
+		<div class="title">
+			<div class="logo"><i class="icon-cloud"></i>{SITE_NAME}</div>
+			<div class='info'>——欢迎回来！</div>
+		</div>
+		<div class="form">
+			<form action="" method="post">
+				<div class="inputs">
+					<div><span>用户名：</span>
+					<input id="username" name='username' type="text" placeholder="用户名" required autocomplete="on"/>
+					</div>
+					<div><span>密码：</span>
+					<input id="password" name='password' type="password" placeholder="密码" required  autocomplete="on" />
+					</div>
+					{if SITE_ADMIN_CODE}
+					<div class="login-code"><span>验证码：</span>
+					<input id="password" name='code' type="text" placeholder="验证码" required  autocomplete="on" />
+					{dr_code(120, 35)}
+					</div>
+					{/if}
+				</div>
+				<div class="actions">
+					<input type="submit" id="submit" value="登录" />
+				</div>
+				<div class="msg"></div>
+				<div style="clear:both;"></div>
+			</form>
+		</div>
+	</div>
+<div class="common_footer">
+Copyright © <a href="http://www.mutaoinc.net" target="_blank">慕涛网络</a> All rights reserved.
+</div>
+</body>
+</html>

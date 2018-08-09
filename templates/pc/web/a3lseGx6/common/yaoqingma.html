@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    {template "head.html","/"}
+    <style type="text/css">.sharecontent{min-height:100vh;width:100vw;background:url({HOME_THEME_PATH}images/sharecontent.jpg) no-repeat top;background-size:100% auto;background-position:0 -15vw}</style>
+    <script>
+        wx.ready(function() {
+            wx.onMenuShareTimeline({
+                title: '注册注册注册！',
+                link: '{SITE_URL}?s=mall&c=home&m=openyaoqing#{$ticket}'
+            });
+            wx.onMenuShareAppMessage({
+                title: '注册注册',
+                desc: '盛情邀您帮拆包，同等礼包送给您~',
+                link: '{SITE_URL}?s=mall&c=home&m=openyaoqing#{$ticket}'
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="app">
+    <div><div class="sharecontent"></div></div>
+</div>
+{template "popup.html","/"}
+</body>
+</html>

@@ -1,0 +1,140 @@
+{template nheader.html}
+<script type="text/javascript">
+$(function() {
+{if $result}
+dr_tips("{$result}");
+{/if}
+$("#menu_body").sortable();
+});
+</script>
+<form class="form-horizontal" action="" method="post" id="myform" name="myform">
+<div class="page-bar">
+	<ul class="page-breadcrumb mylink">
+		{$menu.link}
+        <li><a href="{SYS_HELP_URL}227.html" target="_blank"><i class="fa fa-book"></i> {fc_lang('在线帮助')}</a></li>
+	</ul>
+	<ul class="page-breadcrumb myname">
+		{$menu.name}
+	</ul>
+	<div class="page-toolbar">
+		<div class="btn-group pull-right">
+			<button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> {fc_lang('操作菜单')}
+				<i class="fa fa-angle-down"></i>
+			</button>
+			<ul class="dropdown-menu pull-right" role="menu">
+				{loop $menu.quick $t}
+				<li>
+					<a href="{$t.url}">{$t.icon} {$t.name}</a>
+				</li>
+				{/loop}
+				<li class="divider"> </li>
+				<li>
+					<a href="javascript:window.location.reload();">
+						<i class="icon-refresh"></i> {fc_lang('刷新页面')}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<h3 class="page-title">
+	<small></small>
+</h3>
+<div class="portlet light bordered myfbody">
+
+	<div class="portlet-title">
+		<div class="caption">
+			<span class="caption-subject font-green">{fc_lang('商品规格')}</span>
+		</div>
+	</div>
+	<div class="portlet-body">
+
+		<div class="row">
+			<div class="portlet-body form">
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">{fc_lang('类型')}：</label>
+                    <div class="col-md-9">
+                        <div class="radio-list">
+                            {loop $type $i $n}
+                            <label class="radio-inline"><input type="radio" name="data[type]" value="{$i}" {if $data['type'] == $i}checked{/if} /> {$n}</label>
+                            {/loop}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">{fc_lang('名称')}：</label>
+                    <div class="col-md-9">
+                        <label><input class="form-control" type="text" id="dr_name" onblur="d_topinyin('cname','name');" required  value="{$data.name}" name="data[name]"></label>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">{fc_lang('别名')}：</label>
+                    <div class="col-md-9">
+                        <label><input class="form-control" type="text" id="dr_cname"   value="{$data.cname}" name="data[cname]"></label>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">{fc_lang('选项值')}：</label>
+                    <div class="col-md-9">
+                        <div class="form-control-static">
+                            <label>选项值只能由字母或数字组成，请勿用特殊字符</label>
+                            <label><a class="btn green btn-xs" href="javascript:add_menu();"> <i class="fa fa-plus"></i> {fc_lang('添加')} </a></label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-9">
+                        <ul id="menu_body" style="width:530px; overflow:hidden">
+                            {loop $data.value $t $v}
+                            <li>
+                                <table width="100%" class="menu-sort table_from">
+                                    <tbody>
+                                    <tr>
+                                        <td  width="160"">{fc_lang('名称')}：<input class="input-text" type="text" name="value[name][]" value="{$v}" style="width:100px" /></td>
+                                        <td align="left" width="160">{fc_lang('选项值')}：<input class="input-text" type="text" name="value[value][]" value="{$t}" style="width:100px" /></td>
+                                        <td align="left"><a class="del" title="{lang('del')}" href="javascript:;" onClick="remove_menu(this)"></a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            {/loop}
+                        </ul>
+                    </div>
+                </div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="myfooter">
+	<div class="row">
+		<div class="portlet-body form">
+			<div class="form-body">
+				<div class="form-actions">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<button type="submit" class="btn green"> <i class="fa fa-save"></i> {fc_lang('保存')}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+function add_menu() {
+	var data = '<li><table width="100%" class="menu-sort ui-sortable table_from"><tbody><tr><td width="160">{fc_lang('名称')}：<input class="input-text" type="text" name="value[name][]" value="" style="width:100px" /></td><td align="left" width="160">{fc_lang('选项值')}：<input class="input-text" type="text" name="value[value][]" style="width:100px" /></td><td align="left"><a class="del" title="{lang('del')}" href="javascript:;" onClick="remove_menu(this)"></a></td></tr></tbody></table></li>';
+	$('#menu_body').append(data);
+}
+function remove_menu(_this) {
+	$(_this).parent().parent().parent().remove();
+}
+</script>
+{template nfooter.html}

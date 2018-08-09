@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><meta http-equiv=Expires content=-1><meta http-equiv=Pragma content=no-cache><meta http-equiv=Cache-control content=no-cache><meta http-equiv=Cache content=no-cache><title>衣香云,你的洗衣管家</title><style>@-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0; /*初始状态 透明度为0*/
+        }
+        50% {
+          opacity: 0; /*中间状态 透明度为0*/
+        }
+        100% {
+          opacity: 1; /*结尾状态 透明度为1*/
+        }
+      }
+
+      .initdiv
+      {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        -webkit-animation-name: fadeIn; /*动画名称*/
+        -webkit-animation-duration: 5s; /*动画持续时间*/
+        -webkit-animation-iteration-count: 1; /*动画次数*/
+        -webkit-animation-delay: 0s; /*延迟时间*/
+      }
+      .initdiv p{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        text-align: center;
+        background: #FEFCEC;
+        color: #F76A24;
+        line-height: 2em;
+        letter-spacing: 1px;
+        font-size: 12px;
+      }
+      .initdiv img {
+        width: 100%;
+      }
+      #init-browser-unsupport {
+        display: none;
+      }</style><link href=/static/css/app.d0e16d6b16004ac622cf3225decbf590.css rel=stylesheet></head><body><div id=app><div class=initdiv id=init-browser-unsupport><p>页面加载失败，下载APP享受更多服务</p><img src=http://www.yzlpie.com/xiyi/appdownload.png></div><div class=initdiv id=init-network-error><p>网络不给力，请刷新后再试</p></div></div><div id=hideversion style="display: none">a2350b7b36156539a3ab247b7081729a861844abb460421693a8aa53795406a47285a892a5592795260974523686351597968b172a4b6619a016476227a6a61129a113a481237549</div><script type=text/javascript src=/static/js/manifest.57d1d60c756743cff309.js></script><script type=text/javascript src=/static/js/vendor.77fa995174a6d4949b52.js></script><script type=text/javascript src=/static/js/app.722b0021cc082df7dc9e.js></script></body></html>

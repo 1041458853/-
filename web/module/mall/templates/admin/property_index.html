@@ -1,0 +1,129 @@
+{template nheader.html}
+<script>
+	function dr_confirm_set_all22(title) {
+		art.dialog.confirm(title, function(){
+			var _data = $("#myform").serialize();
+			var _url = window.location.href;
+			if ((_data.split('ids')).length-1 <= 0) {
+				$.dialog.tips(lang['select_null'], 2);
+				return true;
+			}
+			$.ajax({type: "POST",dataType:"json", url: _url, data: _data,
+				success: function(data) {
+					if (data.status == 1) {
+						dr_tips(data.code, 3, 1);
+					} else {
+						dr_tips(data.code, 3, 2);
+						top.$('.page-loading').remove();
+						return true;
+					}
+				},
+				error: function(HttpRequest, ajaxOptions, thrownError) {
+					alert(thrownError);
+				}
+			});
+			return true;
+		});
+		return false;
+	}
+</script>
+
+<div class="page-bar">
+	<ul class="page-breadcrumb mylink">
+		{$menu.link}
+		<li><a href="{SYS_HELP_URL}228.html" target="_blank"><i class="fa fa-book"></i> {fc_lang('在线帮助')}</a></li>
+	</ul>
+	<ul class="page-breadcrumb myname">
+		{$menu.name}
+	</ul>
+	<div class="page-toolbar">
+		<div class="btn-group pull-right">
+			<button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> {fc_lang('操作菜单')}
+				<i class="fa fa-angle-down"></i>
+			</button>
+			<ul class="dropdown-menu pull-right" role="menu">
+				{loop $menu.quick $t}
+				<li>
+					<a href="{$t.url}">{$t.icon} {$t.name}</a>
+				</li>
+				{/loop}
+				<li class="divider"> </li>
+				<li>
+					<a href="javascript:window.location.reload();">
+						<i class="icon-refresh"></i> {fc_lang('刷新页面')}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<h3 class="page-title">
+	<small>{fc_lang('商品属性是对商品信息的概括，方便买家快速筛选（文本输入类型不可参与搜索）')}</small>
+</h3>
+
+
+<div class="portlet light bordered">
+	<div class="portlet-body">
+		<div class="table-scrollable v3table">
+			<div class="table-list">
+			<form action="" method="post" name="myform" id="myform">
+				<input name="action" id="action" type="hidden" value="del" />
+				<table class="table">
+					<thead>
+					<tr>
+						<th width="20" align="right"></th>
+						<th width="66">{fc_lang('排序')}</th>
+						<th width="200">{fc_lang('名称')}</th>
+						<td width="200" align="left">{fc_lang('别名')}</td>
+						<td width="100" align="left">{fc_lang('类型')}</td>
+						<th>
+							<span style="padding-left:8px" class="dr_option">{if $this->ci->is_auth(APP_DIR.'/admin/property/add')}<a class="aadd" href="javascript:dr_dialog('{dr_url(APP_DIR.'/property/add', array('catid'=>$catid))}', 'add')"> <i class="fa fa-plus"></i> {fc_lang('添加分组')}</a>{/if}</span>
+						</th>
+					</tr>
+					</thead>
+					<tbody>
+					{loop $list $t}
+					<tr>
+						<td align="right"><input name="ids[]" type="checkbox" class="dr_select toggle md-check" value="{$t.id}" /></td>
+						<td align="left"><input class="input-text displayorder" type="text" name="data[{$t.id}][displayorder]" value="{intval($t.displayorder)}" /></td>
+						<td align="left">{$t.name}</td>
+						<td align="left"></td>
+						<td align="left"></td>
+						<td align="left" class="dr_option">
+							{if $this->ci->is_auth(APP_DIR.'/admin/property/add')}
+							<a class="aadd onloading" href="{dr_url(APP_DIR.'/property/add', array('catid'=>$catid, 'pid'=>$t.id))}"> <i class="fa fa-plus"></i> {fc_lang('添加属性')}</a>{/if}
+							{if $this->ci->is_auth(APP_DIR.'/admin/property/edit')}<a class="aedit" href="javascript:dr_dialog('{dr_url(APP_DIR.'/property/edit',array('catid'=>$catid,'id'=>$t.id))}', 'edit')"> <i class="fa fa-edit"></i> {fc_lang('修改')}</a>{/if}
+						</td>
+					</tr>
+					{loop $t.list $tt}
+					<tr>
+						<td align="right"><input name="ids[]" type="checkbox" class="dr_select toggle md-check" value="{$tt.id}" /></td>
+						<td align="left"><input class="input-text displayorder" type="text" name="data[{$tt.id}][displayorder]" value="{intval($tt.displayorder)}" /></td>
+						<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;&nbsp;{$tt.name}</td>
+						<td align="left">{$tt.cname}</td>
+						<td align="left">{$type[$tt.type]}</td>
+						<td align="left" class="dr_option">
+							{if $this->ci->is_auth(APP_DIR.'/admin/property/edit')}<a class="aedit" href="{dr_url(APP_DIR.'/property/edit',array('catid'=>$catid,'id'=>$tt.id))}"> <i class="fa fa-edit"></i> {fc_lang('修改')}</a>{/if}
+						</td>
+					</tr>
+					{/loop}
+					{/loop}
+					<tr>
+						<th align="right"><input name="dr_select" id="dr_select" class="toggle md-check" type="checkbox" onClick="dr_selected()" /></th>
+						<td colspan="7" align="left">
+							{if $this->ci->is_auth(''.APP_DIR.'/admin/property/del')}<label><button type="button" class="btn red btn-sm" name="option" onClick="$('#action').val('del');dr_confirm_set_all('{fc_lang('您确定要这样操作吗？')}')"> <i class="fa fa-trash"></i> {fc_lang('删除')}</button></label>{/if}
+							{if $this->ci->is_auth(''.APP_DIR.'/admin/property/edit')}
+							<label><button type="button" class="btn green btn-sm" name="option" onClick="$('#action').val('order');dr_confirm_set_all('{fc_lang('您确定要这样操作吗？')}')"> <i class="fa fa-edit"></i>  {fc_lang('排序')}</button></label>
+							<label><button type="button" class="btn green btn-sm" name="option" onClick="$('#action').val('copy');dr_confirm_set_all22('{fc_lang('您确定要这样操作吗？')}')"> <i class="fa fa-copy"></i>  {fc_lang('复制到')}</button></label>
+							<label>{$select}</label>
+							{/if}
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+		</div>
+	</div>
+</div>
+{template nfooter.html}

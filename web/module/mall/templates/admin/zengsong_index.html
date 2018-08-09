@@ -1,0 +1,118 @@
+{template order_header.html}
+<script type="text/javascript">
+	$(function() {
+		$(".table-list tr").last().removeClass("dr_border_none");
+	});
+</script>
+<div class="page-bar">
+	<ul class="page-breadcrumb mylink">
+		{$menu.link}
+	</ul>
+	<ul class="page-breadcrumb myname">
+		{$menu.name}
+	</ul>
+	<div class="page-toolbar">
+		<div class="btn-group pull-right">
+			<button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-hover="dropdown"> {fc_lang('操作菜单')}
+				<i class="fa fa-angle-down"></i>
+			</button>
+			<ul class="dropdown-menu pull-right" role="menu">
+				{loop $menu.quick $t}
+				<li>
+					<a href="{$t.url}">{$t.icon} {$t.name}</a>
+				</li>
+				{/loop}
+				<li class="divider"> </li>
+				<li>
+					<a href="javascript:window.location.reload();">
+						<i class="icon-refresh"></i> {fc_lang('刷新页面')}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="mytopsearch">
+	<form method="post" class="row" action="" name="searchform" id="searchform">
+		<input name="search" id="search" type="hidden" value="1" />
+		<div class="col-md-12">
+			<label>{fc_lang('模块')}</label>
+			<label style="padding-right: 5px;"><i class="fa"></i></label>
+			<label style="padding-right: 10px;">
+				<select name="data[mid]" class="form-control">
+					<option value="">{fc_lang('不限')}</option>
+					{loop $module $t}
+					<option value="{$t.dirname}" {if $param.mid==$t.dirname}selected{/if}>{$t.name}</option>
+					{/loop}
+				</select>
+			</label>
+			<label>
+				<select name="data[field]" class="form-control">
+					{loop $field $t}
+					<option value="{$t.fieldname}" {if $param.field==$t.fieldname}selected{/if}>{$t.name}</option>
+					{/loop}
+				</select>
+			</label>
+			<label><i class="fa fa-caret-right"></i></label>
+			<label style="padding-right: 20px;"><input type="text" class="form-control" placeholder="{fc_lang('多个Id可以用“,”分隔')}" value="{$param['keyword']}" name="data[keyword]" /></label>
+			<label>{fc_lang('下单时间')} ：</label>
+			<label>{dr_field_input('start', 'Date', array('option'=>array('format'=>'Y-m-d','width'=>'100')), (int)$param.start)}</label>
+			<label><i class="fa fa-minus"></i></label>
+			<label style="margin-right:10px">{dr_field_input('end', 'Date', array('option'=>array('format'=>'Y-m-d','width'=>'100')), (int)$param.end)}</label>
+			<label><button type="submit" class="btn green btn-sm" name="submit" > <i class="fa fa-search"></i> {fc_lang('搜索')}</button></label>
+		</div>
+	</form>
+</div>
+<style>
+    .pages li{
+        display:  inline-block;
+    }
+</style>
+<div class="portlet light bordered">
+	<div class="portlet-body">
+		<div class="table-scrollable v3table">
+			<form action="" method="post" name="myform" id="myform">
+				<input name="action" id="action" type="hidden" value="" />
+				<table class="table dr_table">
+					<thead>
+					<tr>
+						<th width="50"></th>
+						<th class="{ns_sorting('id')}" name="id" width="70">{fc_lang('编号')}</th>
+						<th class="{ns_sorting('zengsongren')}" name="buy_uid" width="150">{fc_lang('赠送人')}</th>
+						<th class="{ns_sorting('jieshouren')}" name="sell_uid" width="150">{fc_lang('接收人')}</th>
+						<th class="{ns_sorting('kecheng')}" name="order_price" width="500">{fc_lang('课程')}</th>
+						<th class="{ns_sorting('dingdanhao')}" name="order_time" width="250">{fc_lang('订单号')}</th>
+						<th class="{ns_sorting('time')}" name="status">{fc_lang('赠送时间')}</th>
+					</tr>
+					</thead>
+					<tbody>
+					    
+					    {list action=sql sql='select * from imt_zengsongjilu' page=1 pagesize=10 urlrule=admin.php?&s=mall&c=zengsong&m=index&page=[page]  return=a}
+					    <tr>
+					        <td><input name="ids[]" type="checkbox" class="dr_select toggle md-check" value="{$a.id}" /></td>
+					        <td><a href="{dr_url('order/home/info', array('id'=>$a.id))}">{$a.id}</a></td>
+					        
+					        <td><a href="javascript:;" onclick="dr_dialog_member('{$a.zengsongren}')">{list action=sql sql='select name from imt_member where uid=$a.zengsongren_id'}
+					          {$t.name}
+					   {/list}</a></td>
+					    	<td><a href="javascript:;" onclick="dr_dialog_member('{$a.jieshouren}')">{list action=sql sql='select name from imt_member where uid=$a.jieshouren_id'}
+					          {$t.name}
+					   {/list}</a></td>
+					        <td><a href="javascript:;" onclick="dr_dialog_member('{$a.kecheng}')">{list action=sql sql='select title from imt_1_mall where id=$a.kecheng_id'}
+					          {$t.title}
+					   {/list}</a></td>
+					       	<td>{$a.dingdanhao}</td>
+					    	<td>{$a.time}</td>
+					   </tr>
+					    {/list}
+					
+					</tbody>
+				</table>
+			</form>
+			<div id="pages" class="pages" ><a>{fc_lang('共%s条', $total_a)}</a>{$pages_a}</div>
+		</div>
+	</div>
+</div>
+
+
+{template nfooter.html}

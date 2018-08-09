@@ -1,0 +1,45 @@
+<html>
+    
+    <head>
+        <script type="text/javascript">
+        var memberpath = "{MEMBER_PATH}";
+        </script>
+        <script type="text/javascript" src="{THEME_PATH}js/{SITE_LANGUAGE}.js"></script>
+        <script src="{THEME_PATH}admin/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{THEME_PATH}js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="{THEME_PATH}js/ui-dialog.css">
+        <script type="text/javascript" t src="{THEME_PATH}js/dialog-plus.js"></script>
+        <script type="text/javascript" src="{THEME_PATH}js/jquery.artDialog.js?skin=default"></script>
+        <script type="text/javascript" src="{THEME_PATH}js/dayrui.js"></script>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .share {
+            width: 100vw;
+            height: 100vh;
+            background: url("{HOME_THEME_PATH}images/share_page.jpg") no-repeat top;
+            background-size: 100% auto;
+        }
+        .share img {
+            width: 34vw;
+            height: 34vw;
+            margin: 79.36vw 33.0vw 0 33.0vw;
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div class="share">
+            <img id="qrimg" />
+        </div>
+        <script>
+        $('#qrimg').attr('src', 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=' + location.hash.substr(1))
+            .on('error', function () {
+            $(this).attr('src', '/uploadfile/201802/d5aa4b24eb.jpg');
+        });
+        </script>
+    </body>
+
+</html>

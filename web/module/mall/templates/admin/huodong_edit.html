@@ -1,0 +1,69 @@
+{template nheader.html}
+<div tabindex="-1" style="position: absolute; outline: 0px; left: 450px; top: 200px; z-index: 2147483647;" aria-labelledby="title:1532061544839" aria-describedby="content:1532061544839" class="ui-popup ui-popup-show ui-popup-focus" role="dialog">
+    <div i="dialog" class="ui-dialog">
+        <form style="width:450px;" class="form-horizontal" action="{SITE_URL}admin.php?s=mall&c=huodong&m=edit" method="post" id="myform">
+        <table class="ui-dialog-grid" style="width:100%">
+            <tbody>
+                <tr>
+                    <td i="header" class="ui-dialog-header">
+                        <button i="close" type="button" class="ui-dialog-close" title="取消" onclick="history.go(-1)">×</button>
+                        <div i="title" class="ui-dialog-title">修改打折策略</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td i="body" class="ui-dialog-body">
+                        <div i="content" class="ui-dialog-content" style="width:100%">
+                            <div class="form-body">
+                                <div class="form-group dr_one">
+                                    <label class="col-md-3 control-label">策略名称：</label>
+                                    <div class="col-md-7">
+                                            <input style="width:200px" value="{$name}" name="name">
+                                    </div>
+                                </div>
+                                <div class="form-group dr_one">
+                                    <label class="col-md-3 control-label">课程名称：</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" name="mall_title" id="mall_title">
+                                            {list action=table table=1_mall}
+                                              <option>{$t.title}</option>
+                                            {/list}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group dr_one">
+                                    <label class="col-md-3 control-label">策略规则：</label>
+                                    <div class="col-md-7">
+                                        满<input type="number" style="width:50px" name="jian">件,打<input type="text" style="width:50px" name="zhe">折
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                 <input style="width:200px;visibility:hidden" value="{$id}" name="id">
+                 <!--<input style="width:200px;visibility:hidden" name="mall_id" id="mall_id">-->
+                <tr>
+                    <td i="footer" class="ui-dialog-footer">
+                        <div i="statusbar" class="ui-dialog-statusbar" style="display: none;"></div>
+                        <div i="button" class="ui-dialog-button">
+                            <button type="submit" id="ok" autofocus="" class="ui-dialog-autofocus">生成</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+
+// <script>
+//     $(Function(){
+//         var mall_id = $("#.mall_title option:selected").val();
+//         $("#mall_id").val() = mall_id;
+//         $("#mall_title").change(Function(){
+//             $("#mall_id").val() = mall_id;
+//         })
+        
+//     })
+// </script>
+{template nfooter.html}

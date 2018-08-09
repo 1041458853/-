@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS `{dbprefix}app_excel` ( `id` INT(10) NOT NULL AUTO_INCREMENT COMMENT 'id' , `name` VARCHAR(200) NOT NULL COMMENT '方案名称' , `value` TEXT NOT NULL COMMENT '参数' , `type` INT(1) NOT NULL COMMENT '1导入0导出' , PRIMARY KEY (`id`)) ENGINE = MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT = 'Excel导入导出方案';

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+        var memberpath = "{MEMBER_PATH}";
+        </script>
+        <script type="text/javascript" src="{THEME_PATH}js/{SITE_LANGUAGE}.js"></script>
+        <script src="{THEME_PATH}admin/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{THEME_PATH}js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="{THEME_PATH}js/ui-dialog.css">
+        <script type="text/javascript" t src="{THEME_PATH}js/dialog-plus.js"></script>
+        <script type="text/javascript" src="{THEME_PATH}js/jquery.artDialog.js?skin=default"></script>
+        <link rel="stylesheet" href="{HOME_THEME_PATH}/layui/css/layui.css">
+		<script src="{HOME_THEME_PATH}layui/layui.all.js"></script>
+        <title>赠送</title>
+        
+        
+    </head>
+    <body>
+        <form class="layui-form" action="{SITE_URL}index.php/?s=mall&c=zengsong&m=yigouzengsong" id="tanchubiaodan" display:none method="post"> 
+    			<input name="mall_id" type="hidden" value={$mall_id} /> 
+    			<input name="dingdanhao" type="hidden" value={$dingdanhao} /> 
+    			
+            <div class="layui-form-item"> 
+                <label class="layui-form-label">ID号码</label> 
+                <div class="layui-input-block" style="margin-left: 88px;"> 
+                 <input type="Number" style="display: block;width: 80%;padding-left: 8px;margin-top: 22px;" name="user_id" required lay-verify="required" placeholder="请输入对方id"  autocomplete="off" class="layui-input"> 
+                </div> 
+            </div> 
+            <div class="layui-form-item"> 
+                <label class="layui-form-label">姓名</label> 
+                <div class="layui-input-block" style="margin-left: 88px;"> 
+                 <input type="text" style="display: block;width: 80%;padding-left: 8px;margin-top: 22px;" name="chiyouren_name" required lay-verify="required" placeholder="对方姓名"  autocomplete="off" class="layui-input"> 
+                </div> 
+            </div> 
+            <div class="layui-form-item"> 
+                <label class="layui-form-label">号码</label> 
+                <div class="layui-input-block" style="margin-left: 88px;"> 
+                 <input type="Number" style="display: block;width: 80%;padding-left: 8px;margin-top: 22px;" name="chiyouren_phone" required lay-verify="required" placeholder="对方手机号"  autocomplete="off" class="layui-input"> 
+                </div> 
+            </div> 
+            <div class="layui-form-item"> 
+              <div class="layui-input-block" style="margin-left: 44px;"> 
+                 <button class="layui-btn" onclick="layer.confirm('提交成功', {btn: ['确定'],btn1:function(index, layero){window.parent.location.reload()}});" lay-submit lay-filter="formDemo" style="width: 180px;">赠送</button> 
+              </div> 
+            </div> 
+            
+        </form>
+    </body>
+
+</html>

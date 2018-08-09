@@ -1,0 +1,1078 @@
+
+<html lang="zh-cmn-Hans" style="height: 100%; font-size: 50px;">
+	<head>
+		<title>我的活动</title>
+        <!--<link rel="icon" href="/xiaoe-logo.ico" type="image/x-ico">-->
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<script src="https://hm.baidu.com/hm.js?17bc0e24e08f56c0c13a512a76c458fb"></script>
+		<script>
+			var _hmt = _hmt || [];
+			setTimeout(function() {
+				var t = document.createElement("script");
+				t.src = "https://hm.baidu.com/hm.js?17bc0e24e08f56c0c13a512a76c458fb";
+				var e = document.getElementsByTagName("script")[0];
+				e.parentNode.insertBefore(t, e)
+			}, 0), window.event_report = function(t) {
+				try {
+					_hmt.push(["_trackEvent", t, 1])
+				} catch(t) {}
+			}
+		</script>
+		<script>
+			var isWeiXin = function() {
+					return "micromessenger" == window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i)
+				},
+				onVisibilityChanged = function() {
+					if(!isWeiXin()) {
+						var e = document.visibilityState,
+							i = localStorage.getItem("need_reload_when_show");
+						if((!e || "visible" == e) && 1 == i) {
+							localStorage.setItem("need_reload_when_show", "0");
+							var n = location.pathname;
+							n ? location.replace(n + "?" + (new Date).getTime()) : location.reload(!0)
+						}
+					}
+				};
+			document.addEventListener("webkitvisibilitychange", onVisibilityChanged, !1), document.addEventListener("visibilitychange", onVisibilityChanged, !1)
+		</script>
+		<script>
+			if(false) {
+				var htmlDom = document.documentElement;
+				var windowWidth = htmlDom.clientWidth;
+
+				var proportion = 7.5
+				if(windowWidth >= 480) {
+					windowWidth = 480;
+					proportion = 9.6;
+				} else {
+					proportion = 7.5;
+				}
+
+				var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+				htmlDom.style.fontSize = windowWidth / proportion + 'px';
+				(function() {
+					document.addEventListener('DOMContentLoaded', function() {
+						if(!htmlDom.style.fontSize) {
+							var htmlDomProtect = document.documentElement;
+							var windowWidth = htmlDomProtect.clientWidth;
+							if(windowWidth >= 480) {
+								windowWidth = 480;
+								proportion = 9.6;
+							} else {
+								proportion = 7.5;
+							}
+							htmlDomProtect.style.fontSize = windowWidth / proportion + 'px';
+						}
+					}, false);
+				})();
+
+				window.addEventListener(evt, function() {
+					setTimeout(function() {
+						var htmlDomProtect = document.documentElement;
+						var windowWidth = htmlDomProtect.clientWidth;
+						if(windowWidth >= 480) {
+							windowWidth = 480;
+							proportion = 9.6;
+						} else {
+							proportion = 7.5;
+						}
+						htmlDomProtect.style.fontSize = windowWidth / proportion + 'px';
+					}, 200);
+				}, false);
+			} else {
+				var htmlDom = document.documentElement;
+				var windowWidth = htmlDom.clientWidth;
+				var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+				htmlDom.style.fontSize = windowWidth / 7.5 + 'px';
+				(function() {
+					document.addEventListener('DOMContentLoaded', function() {
+						if(!htmlDom.style.fontSize) {
+							var htmlDomProtect = document.documentElement;
+							var windowWidth = htmlDomProtect.clientWidth;
+							htmlDomProtect.style.fontSize = windowWidth / 7.5 + 'px';
+						}
+					}, false);
+				})();
+
+				window.addEventListener(evt, function() {
+					setTimeout(function() {
+						var htmlDomProtect = document.documentElement;
+						var windowWidth = htmlDomProtect.clientWidth;
+						htmlDomProtect.style.fontSize = windowWidth / 7.5 + 'px';
+					}, 200);
+				}, false);
+			}
+		</script>
+		<script type="text/javascript">
+			navigator.__defineGetter__('userAgent', function() {
+				return 'Mozilla/5.0 (Linux; Android 4.4.4; HM NOTE 1LTEW Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 MicroMessenger/6. 0.0.54_r849063.501 NetType/WIFI';
+			});
+		</script>
+		<style type="text/css">
+			/*H5设计规范样式*/
+			/*颜色*/
+			
+			.EC1 {
+				color: #09BB07;
+			}
+			
+			.EC1_BG {
+				background-color: #09BB07;
+			}
+			
+			.EC2 {
+				color: #FF6B67;
+			}
+			
+			.EC2_BG {
+				background-color: #FF6B67;
+			}
+			
+			.EC3 {
+				color: #576B95;
+			}
+			
+			.EC3_BG {
+				background-color: #576B95;
+			}
+			
+			.EC4 {
+				color: #FF9B2C;
+			}
+			
+			.EC4_BG {
+				background-color: #FF9B2C;
+			}
+			
+			.EC5 {
+				color: #353535;
+			}
+			
+			.EC5_BG {
+				background-color: #353535;
+			}
+			
+			.EC6 {
+				color: #888888;
+			}
+			
+			.EC6_BG {
+				background-color: #888888;
+			}
+			
+			.EC7 {
+				color: #B2B2B2;
+			}
+			
+			.EC7_BG {
+				background-color: #B2B2B2;
+			}
+			
+			.EC8 {
+				color: #E5E5E5;
+			}
+			
+			.EC8_BG {
+				background-color: #E5E5E5;
+			}
+			
+			.EC9 {
+				color: #EFEFF4;
+			}
+			
+			.EC9_BG {
+				background-color: #EFEFF4;
+			}
+			
+			.EC10 {
+				color: #FFFFFF;
+			}
+			
+			.EC10_BG {
+				background-color: #FFFFFF;
+			}
+			/*字号*/
+			
+			.ET1 {
+				font-size: 0.4rem;
+			}
+			
+			.ET2 {
+				font-size: 0.36rem;
+			}
+			
+			.ET3 {
+				font-size: 0.32rem;
+			}
+			
+			.ET4 {
+				font-size: 0.3rem;
+			}
+			
+			.ET5 {
+				font-size: 0.28rem;
+			}
+			
+			.ET6 {
+				font-size: 0.24rem;
+			}
+			
+			.ET7 {
+				font-size: 0.2rem;
+			}
+			/*H5设计规范样式 */
+			/*全局样式重置*/
+			
+			* {
+				margin: 0;
+				border: 0;
+				padding: 0;
+			}
+			
+			body {
+				background-color: #efeff4;
+			}
+			
+			.vue_common {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			
+			.vue_common * {
+				-webkit-box-sizing: inherit;
+				box-sizing: inherit;
+				word-wrap: break-word;
+				word-break: break-all;
+			}
+			/*禁止手机端长按菜单*/
+			
+			a {
+				-webkit-touch-callout: none;
+			}
+			/*清除浮动*/
+			
+			.clearfix:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			.clearfix {
+				zoom: 1;
+			}
+			/*文本不能被选择*/
+			
+			button {
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-user-select: none;
+			}
+			/*去除ios自带的点击态*/
+			
+			a,
+			button,
+			input,
+			textarea,
+			div {
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+			/**
+文字样式
+ */
+			/*列表标题主内容*/
+			
+			.t1 {
+				font-size: 0.32rem;
+			}
+			/*副标题、次要描述*/
+			
+			.t2 {
+				font-size: 0.28rem;
+			}
+			/*辅助信息、弱化内容*/
+			
+			.t3 {
+				font-size: 0.24rem;
+			}
+			/*tab底部等描述信息*/
+			
+			.t4 {
+				font-size: 0.22rem;
+			}
+			/*界面主要描述*/
+			
+			.t5 {
+				font-size: 0.32rem;
+			}
+			/*按钮字号*/
+			
+			.t6 {
+				font-size: 0.36rem;
+			}
+			/*大标题*/
+			
+			.t7 {
+				font-size: 0.4rem;
+			}
+			/*小图标*/
+			
+			.t8 {
+				font-size: 0.2rem;
+			}
+			
+			.c0_white {
+				color: white;
+			}
+			
+			.c1 {
+				color: #09BB07;
+			}
+			
+			.c2 {
+				color: #353535;
+			}
+			
+			.c3 {
+				color: #888888;
+			}
+			
+			.c4 {
+				color: #576B95;
+			}
+			
+			.c5 {
+				color: #E64340;
+			}
+			
+			.c6 {
+				color: #b2b2b2;
+			}
+			
+			.c7 {
+				color: #2f96e6;
+			}
+			
+			.c8 {
+				color: #757575;
+			}
+			
+			.c9 {
+				color: #32cc6e;
+			}
+			
+			.c10 {
+				color: #3cca72;
+			}
+			
+			.c11 {
+				color: #6bd06a;
+			}
+			
+			.c12 {
+				color: #546a94;
+			}
+			
+			.c13 {
+				color: #1bc570;
+			}
+			
+			.c14 {
+				color: #00c674;
+			}
+			
+			.c15 {
+				color: #ff7d2a;
+			}
+			
+			.c_green_normal {
+				background-color: #09bb07;
+			}
+			/*清除浮动*/
+			
+			.clearfix:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			.clearfix {
+				zoom: 1;
+			}
+			/*点击态*/
+			/*绿色的点击态*/
+			
+			.PressGreenBg:active {
+				background-color: rgba(9, 187, 7, 0.2) !important;
+				border-color: rgba(9, 187, 7, 0.2) !important;
+			}
+			/*灰色的点击态*/
+			
+			.pressGreyBg:active {
+				background-color: rgba(125, 125, 125, 0.2) !important;
+				border-color: rgba(125, 125, 125, 0.2) !important;
+			}
+			/*蓝色的点击态*/
+			
+			.pressBlueBg:active {
+				background-color: rgba(43, 143, 247, 0.2) !important;
+				border-color: rgba(43, 143, 247, 0.2) !important;
+			}
+			/*通用点击态*/
+			
+			.pressActive:active {
+				opacity: 0.5;
+			}
+			
+			.navi_href {
+				height: 100%;
+				width: 0.64rem;
+				position: absolute;
+			}
+			
+			.navi_hrefIcon {
+				width: 0.3rem;
+				height: 0.3rem;
+				position: absolute;
+				left: 50%;
+				margin-left: -0.15rem;
+				top: 0.2rem;
+			}
+			
+			.navi_hrefWord {
+				font-size: 0.18rem;
+				color: #fff;
+				text-align: center;
+				margin-top: 0.6rem;
+			}
+			
+			.navi_href:nth-child(1) {
+				left: 0.3rem;
+			}
+			
+			.navi_href:nth-child(2) {
+				left: 1rem;
+			}
+			
+			.navi_href:nth-child(3) {
+				left: 1.7rem;
+			}
+			
+			.navi_href:nth-child(4) {
+				left: 2.6rem;
+			}
+			
+			.naviControl_icon {
+				width: 0.3rem;
+				height: 0.3rem;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -0.15rem;
+				margin-top: -0.15rem;
+			}
+			
+			.navi_close {
+				animation: naviClose 0.2s 1;
+				-webkit-animation: naviClose 0.2s 1;
+				/* Safari 和 Chrome */
+			}
+			
+			.navi_open {
+				animation: naviOpen 0.2s 1;
+				-webkit-animation: naviOpen 0.2s 1;
+				/* Safari 和 Chrome */
+			}
+			
+			@-webkit-keyframes naviClose {
+				0% {
+					width: 3.4rem;
+				}
+				100% {
+					width: 1rem;
+				}
+			}
+			
+			@keyframes naviClose {
+				0% {
+					width: 3.4rem;
+				}
+				100% {
+					width: 1rem;
+				}
+			}
+			
+			@-webkit-keyframes naviOpen {
+				0% {
+					width: 1rem;
+				}
+				100% {
+					width: 3.4rem;
+				}
+			}
+			
+			@keyframes naviOpen {
+				0% {
+					width: 1rem;
+				}
+				100% {
+					width: 3.4rem;
+				}
+			}
+			
+			.navi_openIcon {
+				background: url("/images/navi/nav_open.png") center center;
+				background-repeat: no-repeat;
+				background-size: 100%;
+			}
+			
+			.navi_closeIcon {
+				background: url("/images/navi/nav_close.png") center center;
+				background-repeat: no-repeat;
+				background-size: 100%;
+			}
+			/*图文可选中*/
+			
+			.select {
+				-webkit-touch-callout: initial;
+				-webkit-user-select: initial;
+				-moz-user-select: initial;
+				-ms-user-select: initial;
+				user-select: initial;
+			}
+			/*不可选中*/
+			
+			.un_select {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			/*禁止图片保存的蒙版*/
+			
+			.desc-mb {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+			
+			img {
+				-webkit-touch-callout: none;
+				/* iOS Safari */
+				-webkit-user-select: none;
+				/* Chrome/Safari/Opera */
+				-moz-user-select: none;
+				/* Firefox */
+				-ms-user-select: none;
+				/* Internet Explorer/Edge */
+				user-select: none;
+			}
+		</style>
+		<style type="text/css">
+			html {
+				height: 100%;
+			}
+			
+			body {
+				height: 100%;
+			}
+			
+			.wrapper {
+				height: 100%;
+			}
+			
+			.container {
+				padding: 0 0 2.46rem 0 !important;
+				min-height: 100%;
+				-webkit-box-sizing: border-box !important;
+				box-sizing: border-box !important;
+			}
+			
+			.pageInfo {
+				height: auto !important;
+			}
+			
+			.footer_logo_wrapper {
+				margin-top: -2.46rem;
+				height: 2.46rem;
+			}
+		</style>
+		<style type="text/css">
+			.alert-component[data-v-0a01e5f6] {
+				height: 100%;
+				width: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				overflow: hidden;
+				background: transparent;
+				z-index: 999999;
+			}
+			/*蒙版*/
+			
+			.box-mb[data-v-0a01e5f6] {
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				opacity: .5;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 9998;
+			}
+			/*提示盒子*/
+			
+			.alert-box[data-v-0a01e5f6] {
+				width: 5.6rem;
+				border-radius: .08rem;
+				overflow: hidden;
+				padding-top: .5rem;
+				margin: auto;
+				top: 50%;
+				-webkit-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+				background-color: #fff;
+				position: absolute;
+				left: 0;
+				right: 0;
+				z-index: 9999;
+			}
+			/*盒子标题*/
+			
+			.box-title[data-v-0a01e5f6] {
+				text-align: center;
+				font-size: .36rem;
+				color: #000000;
+				margin-bottom: .18rem;
+			}
+			/*提示描述*/
+			
+			.box-desc[data-v-0a01e5f6] {
+				padding: 0.52rem;
+				padding-bottom: .6rem;
+				color: #888888;
+				font-size: .3rem;
+				line-height: 1.5;
+				text-align: center;
+				overflow: hidden;
+			}
+			/*底部按钮块*/
+			
+			.box-btn-item[data-v-0a01e5f6] {
+				border-top: 1px solid #e5e5e5;
+				height: 1rem;
+			}
+			/*底部按钮通用样式*/
+			
+			.box-btn[data-v-0a01e5f6] {
+				height: 100%;
+				font-size: .36rem;
+				background-color: #fff;
+				vertical-align: top;
+				cursor: pointer;
+				outline: none;
+			}
+			
+			.btn-confirm[data-v-0a01e5f6] {
+				color: #02bb00;
+				width: 100%;
+			}
+			
+			.btn-cancel[data-v-0a01e5f6] {
+				color: #888888;
+				border-right: 1px solid #e5e5e5;
+			}
+			
+			.confirm-btn-item button[data-v-0a01e5f6] {
+				width: 50%;
+				float: left;
+			}
+			/*灰色的点击态*/
+			
+			.pressGreyBg[data-v-0a01e5f6]:active {
+				background-color: rgba(125, 125, 125, 0.2);
+			}
+			
+			.toast-box[data-v-0a01e5f6] {
+				font-size: .26rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: auto;
+				background: rgba(0, 0, 0, .7);
+				color: #fff;
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				-webkit-transition: 200;
+				transition: 200;
+				z-index: 1000000;
+				border-radius: .1rem;
+				white-space: nowrap;
+				max-width: 6rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: center;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			
+			.toast-box-bottom[data-v-0a01e5f6] {
+				top: 65%;
+			}
+			
+			.toast-box-fat[data-v-0a01e5f6] {
+				font-size: .28rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: auto;
+				background: rgba(0, 0, 0, .7);
+				color: #fff;
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				-webkit-transition: 200;
+				transition: 200;
+				z-index: 1000000;
+				border-radius: 0.08rem;
+				width: 5.3rem;
+				text-align: center;
+				padding: 0.4rem 0.22rem;
+			}
+			
+			.toast-box_text[data-v-0a01e5f6] {
+				padding: .12rem .3rem;
+			}
+			
+			.toast-box_success[data-v-0a01e5f6] {
+				padding-top: .6rem;
+				height: 2.4rem;
+				width: 2.4rem;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			
+			.toast-success-icon[data-v-0a01e5f6] {
+				width: .99rem;
+				height: .72rem;
+				margin-bottom: .3rem;
+			}
+		</style>
+		<style type="text/css">
+			.navigation_wrapper {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				-webkit-align-items: center;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				-webkit-justify-content: center;
+				height: 0.33rem;
+				padding: 0.6rem 0 0.6rem 0;
+				-webkit-box-sizing: content-box !important;
+				box-sizing: content-box !important;
+			}
+			
+			.navigation_item {
+				padding: 0 0.15rem;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				border-right: solid 1px #b2b2b2;
+			}
+			
+			.navigation_item:last-child {
+				border-right: none;
+			}
+			
+			.logo_wrapper {
+				text-align: center;
+				background-color: transparent;
+				padding-bottom: 0.3rem;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				height: 0.93rem;
+			}
+			
+			.logo_img {
+				display: block;
+				width: 2.51rem;
+				height: 0.63rem;
+				margin: 0 auto;
+			}
+		</style>
+		<style type="text/css">
+			.dec-4[data-v-4031cc43] {
+				border-bottom: 1px solid #dadada;
+				border-right: 1px solid #dadada;
+				bottom: 0;
+				right: 0;
+				-webkit-transform-origin: bottom right;
+				transform-origin: bottom right;
+			}
+			
+			.dec-3[data-v-4031cc43] {
+				border-bottom: 1px solid #dadada;
+				border-left: 1px solid #dadada;
+				bottom: 0;
+				left: 0;
+				-webkit-transform-origin: bottom left;
+				transform-origin: bottom left;
+			}
+			
+			.dec-2[data-v-4031cc43] {
+				border-top: 1px solid #dadada;
+				border-right: 1px solid #dadada;
+				top: 0;
+				right: 0;
+				-webkit-transform-origin: top right;
+				transform-origin: top right;
+			}
+			
+			.dec-1[data-v-4031cc43] {
+				border-top: 1px solid #dadada;
+				border-left: 1px solid #dadada;
+				top: 0;
+				left: 0;
+				-webkit-transform-origin: top left;
+				transform-origin: top left;
+			}
+			
+			.dec[data-v-4031cc43] {
+				display: block;
+				width: 0.8rem;
+				height: 0.8rem;
+				position: absolute;
+				-webkit-transform: scale(0.5);
+				transform: scale(0.5);
+			}
+			
+			.img-code[data-v-4031cc43] {
+				margin: 0.4rem auto;
+				position: relative;
+				width: 2.3rem;
+				height: 2.3rem;
+			}
+			
+			.account-code-container[data-v-4031cc43] {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 100000000;
+			}
+			
+			.account-code-bg[data-v-4031cc43] {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+			
+			.content-main[data-v-4031cc43] {
+				position: absolute;
+				top: 2.6rem;
+				left: 50%;
+				transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				width: 5rem;
+				height: 5.4rem;
+				border-radius: 0.14rem;
+				background-color: #fff;
+			}
+			
+			.content-main .close[data-v-4031cc43] {
+				width: 0.24rem;
+				height: 0.24rem;
+				position: absolute;
+				top: 0.1rem;
+				right: 0.1rem;
+				padding: 0.2rem;
+				-webkit-box-sizing: content-box;
+				box-sizing: content-box;
+			}
+			
+			.content-main>.title[data-v-4031cc43] {
+				margin-top: 0.7rem;
+				text-align: center;
+				color: #fdab46;
+			}
+			
+			.content-main>.hint-sentence[data-v-4031cc43] {
+				margin-top: 0.2rem;
+				text-align: center;
+			}
+			
+			.code[data-v-4031cc43] {
+				display: block;
+				width: 1.9rem;
+				height: 1.9rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+			}
+			
+			.content-main>.footer[data-v-4031cc43] {
+				margin-top: 0.22rem;
+				text-align: center;
+			}
+		</style>
+		<style type="text/css">
+			.pageInfo {
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.pageInfo img {
+				width: 2rem;
+				height: 2rem;
+				margin-top: 40%
+			}
+		</style>
+	</head>
+
+	<body ondblclick="return!1"><input id="initData" type="hidden" style="display:none" value="{&quot;wxData&quot;:{&quot;debug&quot;:&quot;false&quot;,&quot;beta&quot;:&quot;false&quot;,&quot;appId&quot;:&quot;wx16e1b9a5114a3c19&quot;,&quot;nonceStr&quot;:&quot;qxeytgZVYf&quot;,&quot;timestamp&quot;:1532422092,&quot;url&quot;:&quot;https:\/\/app9g6d09n08507.h5.xiaoeknow.com\/activity_mine&quot;,&quot;signature&quot;:&quot;0311b30f5e17f6bb69be4c989a97c337535c4a1c&quot;,&quot;jsApiList&quot;:&quot;\n                [ 'checkJsApi',\n                'onMenuShareTimeline',\n                'onMenuShareAppMessage',\n                'onMenuShareQQ',\n                'onMenuShareWeibo',\n                'onMenuShareQZone',\n                'onVoiceRecordEnd',\n                'startRecord',\n                'stopRecord',\n                'uploadVoice',\n                'playVoice',\n                'stopVoice',\n                'pauseVoice',\n                'chooseImage',\n                'uploadImage',\n                'downloadImage',\n                'downloadVoice' ]\n            &quot;,&quot;need_share&quot;:true,&quot;share_title&quot;:&quot;&quot;,&quot;share_desc&quot;:&quot;&quot;,&quot;share_link&quot;:&quot;https:\/\/app9g6d09n08507.h5.xiaoeknow.com\/&quot;,&quot;share_img_url&quot;:&quot;&quot;,&quot;need_background_play&quot;:true,&quot;voiceId&quot;:&quot;9VSv3liPmTBc8B_ZEQATgBYLFqBbxMPOp6sYZMPrfgSr7msj8Rovta4cxMzx6gYL&quot;,&quot;needGetLocation&quot;:false},&quot;bizData&quot;:{},&quot;commonData&quot;:{&quot;APPID&quot;:&quot;app9g6d09n08507&quot;,&quot;USERID&quot;:&quot;u_5b56a1586e7ef_Atn6GVtfbH&quot;,&quot;USERIP&quot;:&quot;115.159.99.44&quot;,&quot;MACHINEIP&quot;:&quot;10.105.235.195&quot;}}"> <input id="version_date" type="hidden" style="display:none" value="1">
+		<style>
+			.navigation_home_menu {
+				margin: 0;
+				font-size: .24rem
+			}
+			
+			.navigation_menu {
+				position: fixed;
+				bottom: 1.89rem;
+				right: 0;
+				height: .6rem;
+				width: 1.58rem;
+				background-color: #353535;
+				opacity: .3;
+				z-index: 1000;
+				border-radius: .5rem 0 0 .5rem;
+				overflow: hidden
+			}
+			
+			.navi_control {
+				position: absolute;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				z-index: 2;
+				text-decoration: none;
+				color: #fff
+			}
+			
+			.navi_home {
+				width: .24rem;
+				height: .24rem;
+				position: absolute;
+				left: .2rem;
+				top: 50%;
+				margin-left: 0;
+				margin-top: -.12rem;
+				background: url(/images/navi/homeButtonIcon.png) center center;
+				background-repeat: no-repeat;
+				background-size: 100%
+			}
+			
+			.navi_home_txt {
+				text-align: right;
+				padding-right: .1rem;
+				line-height: .6rem;
+				font-size: .24rem
+			}
+			
+			.title{
+				font-size: 20px;
+				height:45px;
+				padding-top:10px;
+				box-sizing: border-box;
+				background-color: #FFFFFF;
+				text-align: left;
+				border-bottom:1px solid gainsboro;
+			}
+			.title{padding-left: 15px;}
+			.tuwen{background-color: #FFFFFF;border-bottom:1px solid gainsboro;height: 90px;padding-top: 15px;box-sizing: border-box;}
+			.tuwen img{width: 50px;height: 50px;}
+			.tuwen img{float: left;margin-left: 15px;width: 60px;height: 60px;}
+			.tuwen .kecheng{float: left;font-size: 16px;margin-left: 15px;}
+			.tuwen .kecheng p:nth-of-type(1){font-size: 20px;text-align: left;}
+			.tuwen .kecheng p:nth-of-type(2){color: #666666;margin-top: 5px;}
+			.tuwen .kecheng p:nth-of-type(2) span:nth-of-type(2){margin-left: 100px;}
+		</style>
+		<script type="text/javascript">
+			var menu_init = function() {
+				var e = document.querySelector("body"),
+					o = document.getElementById("forbidPageIndex"),
+					d = document.querySelector("#navigation_menu");
+				d && (o && (d.style.display = "none"), e.addEventListener("touchend", function(e) {
+					if(e = e || window.event, d) {
+						var n = e.target || e.srcElement,
+							t = n.nodeName.toLocaleLowerCase();
+						"input" != t && "textarea" != t || (n.addEventListener("focus", function() {
+							d.style.display = "none"
+						}), n.addEventListener("blur", function() {
+							d.style.display = "block", o && (d.style.display = "none")
+						}))
+					}
+				}))
+			};
+			window.onload = menu_init
+		</script>
+		<div class="wrapper">
+			<div class="vue_common container t2 c2">
+				<div class="title">我参与的活动</div>
+					<div class="tuwen">
+						<img src="images/invite_item1.png" />
+						<div class="kecheng">
+							<p>向老师提问</p>
+							<p><span>参与人数：33</span><span>昨天 12:10</span></p>
+						</div>
+					</div>
+					<div class="tuwen">
+						<img src="images/invite_item2.png" />
+						<div class="kecheng">
+							<p>相互讨论</p>
+							<p><span>参与人数：33</span><span>昨天 12:10</span></p>
+						</div>
+					</div>
+					<div class="tuwen">
+						<img src="images/invite_item3.png" />
+						<div class="kecheng">
+							<p>格斗精神元气暴击</p>
+							<p><span>参与人数：33</span><span>昨天 12:10</span></p>
+						</div>
+					</div>
+					<div class="tuwen">
+						<img src="images/invite_item0.png" />
+						<div class="kecheng">
+							<p>遇见二次元的你</p>
+							<p><span>参与人数：33</span><span>昨天 12:10</span></p>
+						</div>
+					</div>
+			</div>
+			
+		</div>
+	</body>
+
+</html>

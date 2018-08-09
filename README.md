@@ -1,0 +1,1 @@
+# poscms_shop
